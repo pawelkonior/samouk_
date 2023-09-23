@@ -8,14 +8,14 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "api": "json-server -w ./fake_api/db.json"
+    "api": "json-server -w ./fake_api/db.json --routes ./fake_api/routes.json"
   },
   "dependencies": {
+    "axios": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "json-server": "^0.17.3",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
@@ -23,6 +23,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "json-server": "^0.17.3",
     "vite": "^4.4.5"
   }
 }
