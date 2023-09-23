@@ -1,3 +1,116 @@
 {
-  "offers": []
+  "offers": [
+    {
+      "id": 1,
+      "title": "Szybki Start z Asynchronicznym JavaScriptem",
+      "author": "Maria S.",
+      "price": 4.0,
+      "description": "Ten kurs jest idealny dla początkujących programistów JavaScript, którzy chcą zrozumieć, jak działa asynchroniczność w JS. Nauczysz się tworzyć skuteczne asynchroniczne funkcje i unikać pułapek związanych z wykonywaniem operacji w tle.",
+      "prerequisites": [
+        "Podstawy JavaScript",
+        "Podstawy programowania"
+      ],
+      "duration": 45,
+      "category": "Programowanie",
+      "tags": [
+        "js",
+        "async",
+        "promises"
+      ],
+      "isTeach": true,
+      "rating": 0,
+      "voters": 0,
+      "thumbnail": "link do obrazka",
+      "isGroup": true
+    },
+    {
+      "id": 2,
+      "title": "Zaawansowany JavaScript Asynchroniczny",
+      "author": "Adam B.",
+      "price": 5.5,
+      "description": "Ten intensywny kurs pomoże Ci stać się ekspertem w obszarze asynchronicznego JavaScript. Nauczysz się tworzyć zaawansowane obietnice, korzystać z async/await, i rozwiązywać trudne problemy związane z równoczesnym przetwarzaniem w JS.",
+      "prerequisites": [
+        "Dobra znajomość JavaScript",
+        "Podstawy asynchroniczności"
+      ],
+      "duration": 30,
+      "category": "Programowanie",
+      "tags": [
+        "js",
+        "async/await",
+        "promises"
+      ],
+      "isTeach": true,
+      "rating": 0,
+      "voters": 0,
+      "thumbnail": "link do obrazka",
+      "isGroup": true
+    },
+    {
+      "id": 3,
+      "title": "JavaScript i Współbieżność",
+      "author": "Magdalena G.",
+      "price": 4.5,
+      "description": "Ten kurs skupia się na zagadnieniach związanych z programowaniem współbieżnym w JavaScript. Dowiesz się, jak efektywnie zarządzać wieloma wątkami i wykorzystywać Web Workers do tworzenia równoczesnych aplikacji webowych.",
+      "prerequisites": [
+        "Zaawansowana znajomość JavaScript"
+      ],
+      "duration": 60,
+      "category": "Programowanie",
+      "tags": [
+        "js",
+        "concurrency",
+        "web workers"
+      ],
+      "isTeach": true,
+      "rating": 0,
+      "voters": 0,
+      "thumbnail": "link do obrazka",
+      "isGroup": true
+    },
+    {
+      "id": 4,
+      "title": "Mistrzostwo w JavaScript Asynchroniczny",
+      "author": "Piotr M.",
+      "price": 6.0,
+      "description": "Ten zaawansowany kurs JavaScript pomoże Ci opanować asynchroniczność na poziomie mistrza. Poznasz zaawansowane techniki, takie jak generatory i obsługa błędów w asynchronicznym kodzie. Przygotuj się do rozwiązywania najtrudniejszych problemów.",
+      "prerequisites": [
+        "Bardzo dobra znajomość JavaScript"
+      ],
+      "duration": 45,
+      "category": "Programowanie",
+      "tags": [
+        "js",
+        "async",
+        "generators"
+      ],
+      "isTeach": true,
+      "rating": 0,
+      "voters": 0,
+      "thumbnail": "link do obrazka",
+      "isGroup": true
+    },
+    {
+      "id": 5,
+      "title": "JavaScript Asynchroniczny w Praktyce",
+      "author": "Katarzyna W.",
+      "price": 4.5,
+      "description": "Ten praktyczny kurs skupia się na wykorzystaniu asynchroniczności w rzeczywistych projektach. Nauczysz się tworzyć interaktywne aplikacje webowe, które korzystają z asynchronicznych żądań sieciowych i obsługi zdarzeń.",
+      "prerequisites": [
+        "Podstawy JavaScript"
+      ],
+      "duration": 60,
+      "category": "Programowanie",
+      "tags": [
+        "js",
+        "async",
+        "praktyka"
+      ],
+      "isTeach": true,
+      "rating": 0,
+      "voters": 0,
+      "thumbnail": "link do obrazka",
+      "isGroup": true
+    }
+  ]
 }
