@@ -23,6 +23,7 @@ function OfferDetails() {
             <h1>{offer.title}</h1>
             <p>{offer.description}</p>
             <p>Cena: {offer.price} PLN</p>
+            <button>Kup</button>
             <Link to={'/'}>Powrót do wyszukiwania</Link>
         </div>
     );
