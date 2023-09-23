@@ -1,12 +1,16 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 
 function Search() {
     const [offer, setOffer] = useState('');
+    const [offers, setOffers] = useState([]);
 
+    useEffect(() => {
+        getOffers().then(({data}) => setOffers(data))
+    }, [])
 
     async function getOffers() {
-        return axios.get('/offers');
+        return axios.get('/api/v1/offers');
     }
 
     return (
@@ -18,7 +22,15 @@ function Search() {
                 onChange={(event) => setOffer(event.target.value)}
             />
             <section>
-                results
+                {offers.length === 0 ?
+                    (<h2>Nie ma ofert</h2>)
+                    :
+                    (
+                        offers.map((offer) => (
+                                <div key={offer.id}>{offer.title}</div>
+                            )
+                        )
+                    )}
             </section>
         </div>
     );
