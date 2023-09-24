@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import OfferCard from "../offers/OfferCard.jsx";
-import {useLocation} from "react-router-dom";
+import {useLocation, useSearchParams} from "react-router-dom";
 import Filters from "../filters/Filters.jsx";
 
 function Search() {
@@ -10,21 +10,37 @@ function Search() {
     const [filters, setFilters] = useState({
         category: "",
         minDuration: 0,
-        maxDuration: 180
+        maxDuration: 600
     });
     const [sorting, setSorting] = useState({
         price: ''
     })
+
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const {state} = useLocation();
 
     useEffect(() => {
         getOffers().then(({data}) => {
             setOffers(data)
-            setFilters({...filters, maxDuration: Math.max(...data.map((offer) => offer.duration))})
         })
-
     }, [])
+
+    useEffect(() => {
+            const queryParams = {}
+            const {category, minDuration, maxDuration} = filters;
+
+            if (category !== '') queryParams.category = category;
+            if (minDuration !== 0) queryParams.minDuration = minDuration;
+            if (maxDuration !== 600) queryParams.maxDuration = maxDuration;
+
+            const {price} = sorting;
+            if (price !== '') queryParams.price = price;
+
+            if (query) queryParams.query = query;
+
+            setSearchParams(queryParams)
+        }, [setSearchParams, filters, sorting, query])
 
     async function getOffers() {
         return axios.get('/api/v1/offers');
@@ -41,7 +57,7 @@ function Search() {
 
     function applySorting(a, b) {
         if (sorting.price === '') return 0;
-        return sorting.price === 'asc' ? a.price - b.price: b.price - a.price
+        return sorting.price === 'asc' ? a.price - b.price : b.price - a.price
     }
 
     return (
