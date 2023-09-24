@@ -230,6 +230,44 @@
       "rating": 0,
       "voters": 0,
       "id": 11
+    },
+    {
+      "title": "Sum",
+      "author": "",
+      "price": null,
+      "duration": null,
+      "isTeach": false,
+      "isGroup": false,
+      "description": "Duży sum",
+      "category": "Wędkarstwo",
+      "tags": [
+        ""
+      ],
+      "prerequisites": [
+        ""
+      ],
+      "rating": 0,
+      "voters": 0,
+      "id": 12
+    },
+    {
+      "title": "SQL",
+      "author": "",
+      "price": null,
+      "duration": null,
+      "isTeach": false,
+      "isGroup": false,
+      "description": "Fancy SQL",
+      "category": "Bazy danych",
+      "tags": [
+        ""
+      ],
+      "prerequisites": [
+        ""
+      ],
+      "rating": 0,
+      "voters": 0,
+      "id": 13
     }
   ]
 }

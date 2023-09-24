@@ -79,6 +79,7 @@ function AddOffer() {
                 <select {...register("category")} id="category">
                     <option>Programowanie</option>
                     <option>Wędkarstwo</option>
+                    <option>Bazy danych</option>
                 </select>
             </div>
 
