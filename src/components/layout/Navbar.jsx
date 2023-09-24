@@ -8,8 +8,11 @@ function Navbar() {
 
     return (
         <div className="navbar">
-            <h1>Samouk</h1>
-            <Link to='/add-offer'>Dodaj ofertę</Link>
+            <Link to='/'><h1>Samouk</h1></Link>
+            <nav>
+                <Link to='/add-offer'>Dodaj ofertę</Link> |{' '}
+                <Link to='/register'>Załóż konto</Link>
+            </nav>
             {!!cart.length && (<Cart/>)}
         </div>
     );

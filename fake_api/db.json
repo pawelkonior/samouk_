@@ -269,5 +269,13 @@
       "voters": 0,
       "id": 13
     }
+  ],
+  "users": [
+    {
+      "username": "elo",
+      "email": "a@a.pl",
+      "password": "sensownego",
+      "id": 1
+    }
   ]
 }
