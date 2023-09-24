@@ -20,9 +20,27 @@ function Search() {
 
     const {state} = useLocation();
 
+    function applySearchParams() {
+        const queryParamsFilter = {}
+        if (searchParams.get('category')) queryParamsFilter['category'] = searchParams.get('category');
+        if (searchParams.get('minDuration')) queryParamsFilter['minDuration'] = searchParams.get('minDuration');
+        if (searchParams.get('maxDuration')) queryParamsFilter['maxDuration'] = searchParams.get('maxDuration');
+
+        setFilters({...filters, ...queryParamsFilter});
+
+        if (searchParams.get('query')) setQuery(searchParams.get('query'));
+
+        const queryParamsSort = {}
+        if (searchParams.get('price')) queryParamsSort['price'] = searchParams.get('price');
+
+        setSorting({...sorting, ...queryParamsSort});
+    }
+
     useEffect(() => {
         getOffers().then(({data}) => {
             setOffers(data)
+
+            applySearchParams();
         })
     }, [])
 
