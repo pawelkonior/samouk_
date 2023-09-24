@@ -1,12 +1,12 @@
-import {Link, Outlet} from "react-router-dom";
-import Cart from "../cart/Cart.jsx";
+import {Outlet} from "react-router-dom";
+import Navbar from "./Navbar.jsx";
+
+import "../../App.css";
 
 function Layout() {
     return (
         <div>
-            <h1>Samouk</h1>
-            <Link to='/add-offer'>Dodaj ofertę</Link>
-            <div><Cart /></div>
+            <Navbar/>
             <Outlet/>
         </div>
     );
