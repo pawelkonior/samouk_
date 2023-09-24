@@ -7,12 +7,20 @@ import Filters from "../filters/Filters.jsx";
 function Search() {
     const [query, setQuery] = useState('');
     const [offers, setOffers] = useState([]);
-    const [filters, setFilters] = useState({category: ""});
+    const [filters, setFilters] = useState({
+        category: "",
+        minDuration: 0,
+        maxDuration:  180
+    });
 
     const {state} = useLocation();
 
     useEffect(() => {
-        getOffers().then(({data}) => setOffers(data))
+        getOffers().then(({data}) => {
+            setOffers(data)
+            setFilters({...filters, maxDuration: Math.max(...data.map((offer) => offer.duration))})
+        })
+
     }, [])
 
     async function getOffers() {
@@ -21,8 +29,11 @@ function Search() {
 
     function applyFilters(offer) {
         const searchFilter = `${offer.title} ${offer.description} ${offer.tags.join(' ')}`.toLowerCase().includes(query.toLowerCase())
+        const categoryFilter = filters.category === '' ? true : offer.category === filters.category
+        const minDuration = filters.minDuration <= offer.duration
+        const maxDuration = filters.maxDuration >= offer.duration
 
-        return filters.category === '' ? searchFilter : searchFilter && offer.category === filters.category
+        return searchFilter && categoryFilter && minDuration && maxDuration
     }
 
     return (
@@ -57,6 +68,7 @@ function Search() {
                                             price={offer.price}
                                             author={offer.author}
                                             tags={offer.tags}
+                                            duration={offer.duration}
                                         />
                                     )
                                 )

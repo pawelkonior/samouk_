@@ -19,6 +19,27 @@ function Filters({offers, filters, setFilters}) {
                         ))}
                 </select>
             </div>
+            <div>
+                <div>
+                    <label htmlFor="min">Długość minimalna</label>
+                    <input
+                        value={filters.minDuration}
+                        type="number"
+                        id='min'
+                        onChange={(event) => setFilters({...filters, minDuration: event.target.valueAsNumber})}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="max">Długość maksymalna</label>
+                    <input
+                        value={filters.maxDuration}
+                        type="number"
+                        id='max'
+                        onChange={(event) => setFilters({...filters, maxDuration: event.target.valueAsNumber})}
+                    />
+
+                </div>
+            </div>
         </div>
     );
 }
