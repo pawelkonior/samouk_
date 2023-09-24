@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Szybki Start z Asynchronicznym JavaScriptem",
       "author": "Maria S.",
-      "price": 4.0,
+      "price": 4,
       "description": "Ten kurs jest idealny dla początkujących programistów JavaScript, którzy chcą zrozumieć, jak działa asynchroniczność w JS. Nauczysz się tworzyć skuteczne asynchroniczne funkcje i unikać pułapek związanych z wykonywaniem operacji w tle.",
       "prerequisites": [
         "Podstawy JavaScript",
@@ -72,7 +72,7 @@
       "id": 4,
       "title": "Mistrzostwo w JavaScript Asynchroniczny",
       "author": "Piotr M.",
-      "price": 6.0,
+      "price": 6,
       "description": "Ten zaawansowany kurs JavaScript pomoże Ci opanować asynchroniczność na poziomie mistrza. Poznasz zaawansowane techniki, takie jak generatory i obsługa błędów w asynchronicznym kodzie. Przygotuj się do rozwiązywania najtrudniejszych problemów.",
       "prerequisites": [
         "Bardzo dobra znajomość JavaScript"
@@ -111,6 +111,30 @@
       "voters": 0,
       "thumbnail": "link do obrazka",
       "isGroup": true
+    },
+    {
+      "title": "dds",
+      "author": "sdsd",
+      "price": 2,
+      "duration": 3,
+      "isTeach": true,
+      "thumbnail": {
+        "0": {}
+      },
+      "isGroup": false,
+      "description": "eeqrtger",
+      "category": "Wędkarstwo",
+      "tags": [
+        "ewew",
+        "ewwe",
+        "weewe"
+      ],
+      "prerequisites": [
+        ""
+      ],
+      "rating": 0,
+      "voters": 0,
+      "id": 6
     }
   ]
 }
