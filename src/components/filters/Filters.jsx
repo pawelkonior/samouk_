@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Filters({offers, filters, setFilters}) {
+function Filters({offers, filters, setFilters, sorting, setSorting}) {
     return (
         <div>
             <h2>Wyszukiwanie zaawansowane</h2>
@@ -40,6 +40,19 @@ function Filters({offers, filters, setFilters}) {
 
                 </div>
             </div>
+            <div>
+                <label htmlFor="price">Sortuj po cenie</label>
+                <select
+                    name="price"
+                    id="price"
+                    value={sorting.price}
+                    onChange={(event) => setSorting({...sorting, price: event.target.value})}
+                >
+                    <option value="">---</option>
+                    <option value="asc">Rosnąco</option>
+                    <option value="desc">Malejąco</option>
+                </select>
+            </div>
         </div>
     );
 }
@@ -51,7 +64,9 @@ Filters.propTypes = {
         })
     ),
     filters: PropTypes.object,
-    setFilters: PropTypes.func
+    setFilters: PropTypes.func,
+    sorting: PropTypes.object,
+    setSorting: PropTypes.func
 }
 
 export default Filters;

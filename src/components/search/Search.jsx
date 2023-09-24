@@ -10,8 +10,11 @@ function Search() {
     const [filters, setFilters] = useState({
         category: "",
         minDuration: 0,
-        maxDuration:  180
+        maxDuration: 180
     });
+    const [sorting, setSorting] = useState({
+        price: ''
+    })
 
     const {state} = useLocation();
 
@@ -36,6 +39,11 @@ function Search() {
         return searchFilter && categoryFilter && minDuration && maxDuration
     }
 
+    function applySorting(a, b) {
+        if (sorting.price === '') return 0;
+        return sorting.price === 'asc' ? a.price - b.price: b.price - a.price
+    }
+
     return (
         <div>
             {state && (
@@ -50,7 +58,13 @@ function Search() {
             />
 
             <div className="layout">
-                <Filters offers={offers} filters={filters} setFilters={setFilters}/>
+                <Filters
+                    offers={offers}
+                    filters={filters}
+                    setFilters={setFilters}
+                    sorting={sorting}
+                    setSorting={setSorting}
+                />
 
                 <section>
                     {offers.length === 0 ?
@@ -59,6 +73,7 @@ function Search() {
                         (
                             offers
                                 .filter(applyFilters)
+                                .sort(applySorting)
                                 .map((offer) => (
                                         <OfferCard
                                             key={offer.id}
