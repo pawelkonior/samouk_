@@ -135,6 +135,101 @@
       "rating": 0,
       "voters": 0,
       "id": 6
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": null,
+      "duration": null,
+      "isTeach": false,
+      "isGroup": false,
+      "description": "",
+      "category": "Programowanie",
+      "tags": [
+        ""
+      ],
+      "prerequisites": [
+        ""
+      ],
+      "rating": 0,
+      "voters": 0,
+      "id": 7
+    },
+    {
+      "title": "elo pomelo",
+      "author": "",
+      "price": null,
+      "duration": null,
+      "isTeach": false,
+      "isGroup": false,
+      "description": "",
+      "category": "Programowanie",
+      "tags": [
+        ""
+      ],
+      "prerequisites": [
+        ""
+      ],
+      "rating": 0,
+      "voters": 0,
+      "id": 8
+    },
+    {
+      "title": "ewrrter",
+      "author": "",
+      "price": null,
+      "duration": null,
+      "isTeach": false,
+      "isGroup": false,
+      "description": "",
+      "category": "Programowanie",
+      "tags": [
+        ""
+      ],
+      "prerequisites": [
+        ""
+      ],
+      "rating": 0,
+      "voters": 0,
+      "id": 9
+    },
+    {
+      "title": "hue hue",
+      "author": "",
+      "price": null,
+      "duration": null,
+      "isTeach": false,
+      "isGroup": false,
+      "description": "",
+      "category": "Programowanie",
+      "tags": [
+        ""
+      ],
+      "prerequisites": [
+        ""
+      ],
+      "rating": 0,
+      "voters": 0,
+      "id": 10
+    },
+    {
+      "title": "Js",
+      "author": "",
+      "price": null,
+      "duration": null,
+      "isTeach": false,
+      "isGroup": false,
+      "description": "Fancy course",
+      "category": "Programowanie",
+      "tags": [
+        ""
+      ],
+      "prerequisites": [
+        ""
+      ],
+      "rating": 0,
+      "voters": 0,
+      "id": 11
     }
   ]
 }

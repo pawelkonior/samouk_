@@ -1,5 +1,6 @@
 import {useForm} from "react-hook-form";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 function AddOffer() {
     const {
@@ -7,6 +8,8 @@ function AddOffer() {
         handleSubmit,
         formState: {errors},
     } = useForm()
+
+    const navigate = useNavigate();
 
     const onSubmit = (data) => sendData(data)
 
@@ -19,17 +22,20 @@ function AddOffer() {
             tags: data.tags.split(' '),
             price: parseFloat(data.price),
             duration: parseFloat(data.duration),
-            thumbnail: data.thumbnail[0].name
+            thumbnail: data.thumbnail[0]?.name
         }
 
-        return axios.post('/api/v1/offers', updatedData);
+        await axios.post('/api/v1/offers', updatedData);
+
+        navigate('/', {state: data.title})
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="title">Nazwa</label>
-                <input {...register("title")} id='title'/>
+                <input {...register("title", {required: true})} id='title'/>
+                {errors.title && <span>This field is required</span>}
             </div>
 
             <div>
@@ -64,7 +70,8 @@ function AddOffer() {
 
             <div>
                 <label htmlFor="description">Opis</label>
-                <textarea {...register("description")} id="description"/>
+                <textarea {...register("description", {required: true})} id="description"/>
+                {errors.description && <span>This field is required</span>}
             </div>
 
             <div>
@@ -84,8 +91,6 @@ function AddOffer() {
                 <label htmlFor="prerequisites">Wymagania początkowe</label>
                 <input {...register("prerequisites")} id="prerequisites"/>
             </div>
-
-            {errors.exampleRequired && <span>This field is required</span>}
             <input type="submit"/>
         </form>
     )

@@ -1,10 +1,13 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import OfferCard from "../offers/OfferCard.jsx";
+import {useLocation} from "react-router-dom";
 
 function Search() {
     const [query, setQuery] = useState('');
     const [offers, setOffers] = useState([]);
+
+    const {state} = useLocation();
 
     useEffect(() => {
         getOffers().then(({data}) => setOffers(data))
@@ -16,6 +19,10 @@ function Search() {
 
     return (
         <div>
+            {state && (
+                <div>Oferta <b>{state}</b>. Została pomyślnie dodana.</div>
+            )}
+
             <input
                 type="text"
                 placeholder="Szukaj ofert"
