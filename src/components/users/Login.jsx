@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
-function Register() {
+function Login() {
     const {
         register,
         handleSubmit,
@@ -12,20 +12,22 @@ function Register() {
     const navigate = useNavigate();
 
     const onSubmit = async (data) => {
-        await axios.post('/api/v1/users', data)
+        const users = await axios.get('/api/v1/users')
 
-        navigate('/login');
+        users.data.forEach((user) => {
+            if (user.email === data.email && user.password === data.password) {
+                navigate('/');
+            } else {
+                console.log('Niepoprawne dane')
+            }
+        })
     }
+
 
     return (
         <div>
-            <h1>Zarejestruj się</h1>
+            <h1>Zaloguj się</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
-                    <label htmlFor="username">Nazwa użytkownika</label>
-                    <input type="text" id='username' {...register("username", {required: true})}/>
-                    {errors.username && <span>This field is required</span>}
-                </div>
 
                 <div>
                     <label htmlFor="email">Email</label>
@@ -38,10 +40,10 @@ function Register() {
                     <input type="password" id='password' {...register("password", {required: true})}/>
                     {errors.password && <span>This field is required</span>}
                 </div>
-                <button>Rejestracja</button>
+                <button>Logowanie</button>
             </form>
         </div>
     );
 }
 
-export default Register;
+export default Login;

@@ -276,6 +276,12 @@
       "email": "a@a.pl",
       "password": "sensownego",
       "id": 1
+    },
+    {
+      "username": "qqq",
+      "email": "q@a.pl",
+      "password": "qqq",
+      "id": 2
     }
   ]
 }

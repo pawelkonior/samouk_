@@ -11,7 +11,8 @@ function Navbar() {
             <Link to='/'><h1>Samouk</h1></Link>
             <nav>
                 <Link to='/add-offer'>Dodaj ofertę</Link> |{' '}
-                <Link to='/register'>Załóż konto</Link>
+                <Link to='/register'>Załóż konto</Link> |{' '}
+                <Link to='/login'>Zaloguj się</Link>
             </nav>
             {!!cart.length && (<Cart/>)}
         </div>

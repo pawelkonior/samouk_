@@ -4,6 +4,7 @@ import Layout from "./components/layout/Layout.jsx";
 import OfferDetails from "./components/offers/OfferDetails.jsx";
 import AddOffer from "./components/offers/AddOffer.jsx";
 import Register from "./components/users/Register.jsx";
+import Login from "./components/users/Login.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register/>
+            },
+            {
+                path: "/login",
+                element: <Login/>
             }
         ]
     },
